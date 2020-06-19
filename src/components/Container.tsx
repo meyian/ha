@@ -5,11 +5,8 @@ import { widths } from '../styles/variables'
 import { getEmSize } from '../styles/mixins'
 
 const StyledContainer = styled.div`
-  position: relative;
-  margin-left: auto;
-  margin-right: auto;
-  width: auto;
-  max-width: ${getEmSize(widths.lg)}em;
+  height: 100vh;
+  width: 100v;
 `
 
 interface ContainerProps {

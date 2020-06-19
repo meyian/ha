@@ -1,6 +1,19 @@
 'use strict'
 
+const { createProxyMiddleware } = require("http-proxy-middleware")
+
 module.exports = {
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      createProxyMiddleware({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
+  },
   siteMetadata: {
     title: 'gatsby-starter-typescript-plus',
     description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',

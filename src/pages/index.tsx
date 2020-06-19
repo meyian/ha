@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import styled from '@emotion/styled'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -18,6 +19,8 @@ const togglePage = (newPage: string) => {
   // show newPage
 }
 
+
+
 const IndexPage = () => {
   const [show, setShow] = useState(false)
   const [activeModal, setActiveModal] = useState(false)
@@ -34,6 +37,12 @@ const IndexPage = () => {
               ?
             </button>
           </header>
+          <section>
+            <h1>Hello World</h1>
+          </section>
+          <footer>
+
+          </footer>
 
           <Modal show={show} onHide={handleClose}>
             <Modal.Header closeButton>
