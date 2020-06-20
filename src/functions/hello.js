@@ -13,19 +13,29 @@ export function handler(event, context, callback) {
     data: "hello world " + date.getSeconds()
   }
 
-  // client.query(q.Create(q.Ref('classes/todos'), todoItem))
   client.query(
     q.Create(
       q.Collection('todos'),
-      { data: { title: 'What I had for breakfast ..' } },
+      { data: todoItem },
     )
   )
     .then(response => {
       console.log('success, line 18')
+      callback(null, {
+        statusCode: 200, // http status code
+        body: JSON.stringify({
+          msg: JSON.stringify(todoItem),
+        })
+      })
     })
     .catch(response => {
       console.log('failure, line 21')
-      console.log(response)
+      callback(null, {
+        statusCode: 200, // http status code
+        body: JSON.stringify({
+          msg: JSON.stringify(todoItem),
+        })
+      })
     })
 }
 

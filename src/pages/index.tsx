@@ -22,9 +22,6 @@ const togglePage = (newPage: string) => {
 
 const IndexPage = () => {
 
-  // console.log('FAUNADB_SERVER_SECRET');
-  // console.log(GATSBY_FAUNADB_SERVER_SECRET);
-
   const [show, setShow] = useState(false)
   const [msg, setMsg] = useState("")
   useEffect(()=> {
