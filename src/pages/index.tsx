@@ -49,12 +49,9 @@ const IndexPage = () => {
             <button type="button" onClick={handleShow}>
               ?
             </button>
-            <button type="button" onClick={handleUpvote}>
-              upvote
-            </button>
           </header>
           <section>
-            <h1>Hello World</h1>
+            <h1>Hello World #1</h1>
             <p>{msg}</p>
           </section>
           <footer>
