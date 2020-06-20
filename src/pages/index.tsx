@@ -51,7 +51,7 @@ const IndexPage = () => {
             </button>
           </header>
           <section>
-            <h1>Hello World #1</h1>
+            <h1>Hello World #2</h1>
             <p>{msg}</p>
           </section>
           <footer>
