@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import styled from '@emotion/styled'
 
 import Page from '../components/Page'
 import Container from '../components/Container'
@@ -22,11 +21,28 @@ const togglePage = (newPage: string) => {
 
 
 const IndexPage = () => {
+
+  // console.log('FAUNADB_SERVER_SECRET');
+  // console.log(GATSBY_FAUNADB_SERVER_SECRET);
+
   const [show, setShow] = useState(false)
+  const [msg, setMsg] = useState("")
+  useEffect(()=> {
+    console.log('useEffect')
+    fetch("/.netlify/functions/hello")
+      .then(response => response.json())
+      .then(({msg}) => setMsg(msg))
+  }, []);
   const [activeModal, setActiveModal] = useState(false)
+
+
 
   const handleClose = () => setShow(false)
   const handleShow = () => setShow(true)
+  const handleUpvote = () => {
+    // trigger 
+    // toggle between upvote and downvote
+  }
 
   return (
     <IndexLayout>
@@ -36,9 +52,13 @@ const IndexPage = () => {
             <button type="button" onClick={handleShow}>
               ?
             </button>
+            <button type="button" onClick={handleUpvote}>
+              upvote
+            </button>
           </header>
           <section>
             <h1>Hello World</h1>
+            <p>{msg}</p>
           </section>
           <footer>
 
