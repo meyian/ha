@@ -15,7 +15,7 @@ module.exports = {
     )
   },
   siteMetadata: {
-    title: 'gatsby-starter-typescript-plus',
+    title: `Pandas Eating Lots`,
     description: 'A starter kit for TypeScript-based Gatsby projects with sensible defaults.',
     keywords: 'gatsbyjs, gatsby, javascript, sample, something',
     siteUrl: 'https://gatsby-starter-typescript-plus.netlify.com',
@@ -26,11 +26,18 @@ module.exports = {
     }
   },
   plugins: [
+    `gatsby-plugin-emotion`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'content',
-        path: `${__dirname}/src/content`
+        name: 'src',
+        path: `${__dirname}/src/`
       }
     },
     {
