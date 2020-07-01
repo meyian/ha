@@ -1,0 +1,17 @@
+.scenario-cell{
+  background-color: aqua;
+  color: white;
+  width: 200px;
+  height: 200px;
+  overflow: scroll;
+  border-color: white;
+}
+
+.scenario-cell.selected{
+  border: 2px solid gray;
+}
+
+.volume-grid{
+  display: grid;
+  grid-template-columns: auto auto;
+}

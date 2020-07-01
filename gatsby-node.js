@@ -1,17 +1,22 @@
 'use strict'
 
 const { createFilePath } = require(`gatsby-source-filesystem`)
-const path = require('path')
+const path = require(`path`)
+const scenario = require(`./lib/scenario`)
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === `MarkdownRemark`) {
     const slug = createFilePath({ node, getNode, basePath: `pages` })
-    createNodeField({
-      node,
-      name: `slug`,
-      value: slug,
+
+    const fieldsToCreate = [
+      { name: `slug`, value: slug },
+      { name: `title`, value: node.frontmatter.title },
+    ]
+    
+    fieldsToCreate.forEach(({ name, value }) => {
+      createNodeField({ node, name, value })
     })
   }
 
@@ -59,7 +64,9 @@ exports.createPages = async ({ graphql, actions }) => {
             fields {
               layout
               slug
+              title
             }
+            html
           }
         }
       }
@@ -71,37 +78,29 @@ exports.createPages = async ({ graphql, actions }) => {
     throw new Error(allMarkdown.errors)
   }
 
-  // allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
-  //   const { slug, layout } = node.fields
+  const nodes = allMarkdown.data.allMarkdownRemark.edges.map(({node}) => node)
 
-  //   createPage({
-  //     path: slug,
-  //     // This will automatically resolve the template to a corresponding
-  //     // `layout` frontmatter in the Markdown.
-  //     //
-  //     // Feel free to set any `layout` as you'd like in the frontmatter, as
-  //     // long as the corresponding template file exists in src/templates.
-  //     // If no template is set, it will fall back to the default `page`
-  //     // template.
-  //     //
-  //     // Note that the template has to exist first, or else the build will fail.
-  //     component: path.resolve(`./src/templates/${layout || 'page'}.tsx`),
-  //     context: {
-  //       // Data passed to context is available in page queries as GraphQL variables.
-  //       slug
-  //     }
-  //   })
-  // })
+  const collatedPosts = scenario.packagePosts(nodes);
 
-  allMarkdown.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  console.log("gatsby-node.js > collatedPosts")
+
+  for (let title in collatedPosts){
+    const sections = collatedPosts[title]
+    const { slug } = sections
+
+    delete sections.slug
+
     createPage({
-      path: node.fields.slug,
-      component: path.resolve(`./src/templates/blog-post.js`),
+      path: slug,
+      component: path.resolve(`./src/templates/scenario.tsx`),
       context: {
-        // Data passed to context is available
-        // in page queries as GraphQL variables.
-        slug: node.fields.slug,
+        // slug: node.fields.slug,
+        sections
       },
     })
-  })
+  }
 }
+
+/*
+
+*/
