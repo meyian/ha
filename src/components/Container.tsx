@@ -5,8 +5,10 @@ import { widths } from '../styles/variables'
 import { getEmSize } from '../styles/mixins'
 
 const StyledContainer = styled.div`
-  height: 100vh;
-  width: 100v;
+  height: calc(100vh - 3rem);
+  width: calc(100vw - 3rem);
+  display: flex;
+  flex-direction: column;
 `
 
 interface ContainerProps {

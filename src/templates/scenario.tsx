@@ -145,15 +145,29 @@ Todo
 + build out the section/density useStates, etc.    
 + Collapse everything into one 200 x 200 square    
 + Make a border around the selected element (12:20 PM)
-* check code in 
-* write tests
-* Write (at least section 1) your intro essay
++ check code in 
++ start to back up my computer (12:38 PM)
+= write tests
+  + read the medium article (10:20 AM)
+  - read two codebases, see how they test react
+  - write your 3 tests
+* boil down to one box
 * Style
 
 
 Tests
 
 Add a test to make sure that correct # of sections and densities shows up
-  - just test lib/scenario.jsx
+  - just test lib/scenario.jsx (not a react test)
+React
+  - adding something to the props changes the number of volumes rendering
+  - adjust density and sectionNum fns work
+  - clicking the buttons changes the density and section Num
+(Then we can start coding again!)
+
+
+Test notes:
+
+* You can change the props and prove that something different renders
 
 */
