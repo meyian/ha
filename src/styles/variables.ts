@@ -1,6 +1,15 @@
 /* eslint-disable max-len */
 
+export const siteSpecific = {
+  sizes: {
+    breadSlice: "3rem"
+  }
+  // font: Courier new
+}
+
 export const colors = {
+  velvet: '#e8e800',
+  writingVelvet: '#caca00',
   brand: '#663399',
   lilac: '#9d7cbf',
   accent: '#ffb238',

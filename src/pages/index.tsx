@@ -7,7 +7,7 @@ import YellowVelvetLayout from '../layouts/yellow_velvet'
 const IndexPage = () => {
   return (
     <YellowVelvetLayout>
-      <h1>Hello World #{Math.round(Math.random() * 10)}</h1>
+      <h1>Hello World #{Math.round(Math.random() * 100)}</h1>
     </YellowVelvetLayout>
   )
 }
@@ -15,11 +15,6 @@ const IndexPage = () => {
 export default IndexPage
 
 /*
-
-<>
-      <Media at="sm">Hello mobile!</Media>
-      <Media greaterThan="sm">Hello desktop!</Media>
-    </>
 
 Todo
 
@@ -39,9 +34,12 @@ Sun 10 Jul
 * Footer
   - move to a responsive layout
     + learn about artsy/fresnel
-    = start on the mobile version of the site
-      - create YellowVelvet theme
-  - float the menu to the right
+    + start on the mobile version of the site
+      + create YellowVelvet theme (6:33 AM)
+      + mobile and desktop version of footer (7:30 AM)
+      * slide out menu
+  - menu button with slideout
+  - float the menu to the left
   - menu slides out
 * Make header/footer part of a layout
 * Main

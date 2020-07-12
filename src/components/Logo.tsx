@@ -50,11 +50,3 @@ export default function Logo(){
     </div>
   )
 }
-
-// import * as React from “react”
-// interface WelcomeProps {
-//  name: string,
-// }
-// const Welcome: React.SFC<WelcomeProps> = (props) => {
-//  return <h1>Hello, {props.name}</h1>;
-// }

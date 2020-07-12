@@ -5,20 +5,18 @@ import styled from '@emotion/styled'
 
 import 'modern-normalize'
 import '../styles/normalize'
+import { colors } from '../styles/variables'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
+import { Media } from "../Media"
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import Modals from '../components/Modals'
 import Logo from '../components/Logo'
-import Button from 'react-bootstrap/Button'
-
-
-const Footer = styled.footer`
-  height: 3rem
-`
+import FooterDesktop from '../components/FooterDesktop'
+import FooterMobile from '../components/FooterMobile'
 
 const Main = styled.main`
   flex-grow: 1
@@ -77,9 +75,10 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
               <Main>
                 {children}
               </Main>
-              <Footer>
-                <button>[menu]</button>
-              </Footer>
+              {/* bookmark */}
+              <a href="" style={{color: `${colors.writingVelvet}`}}>request a feature</a>
+              <Media at="sm"><FooterMobile /></Media>
+              <Media greaterThan="sm"><FooterDesktop/></Media>
               <Modals />
             </Container>
           </Page>
