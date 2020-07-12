@@ -1,28 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
 
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import moment from 'moment'
 
 const CenteredDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
-
-const hasRun = false
-
-const getFormattedTime = (separator) => {
-  const date = new Date()
-  const month = date.getMonth().toString().padStart(2, '0'),
-    day = date.getDate().toString().padStart(2, '0'),
-    year = date.getFullYear(),
-    hours = date.getHours(),
-    minutes = date.getMinutes().toString().padStart(2, '0')
-  const dateStr = `${month}/${day}/${year} ${hours}${separator}${minutes}am`
-
-  return dateStr
-}
 
 export default function Logo(){
   const data = useStaticQuery(graphql`
@@ -56,7 +43,7 @@ export default function Logo(){
           alt="Site logo"
         />
         <p>
-          { getFormattedTime(separator) } ACC
+          { moment().format(`MM/DD/YYYY HH${separator}mma`) } ACC
         </p>
       </CenteredDiv>
 

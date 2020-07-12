@@ -1,102 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import styled from '@emotion/styled'
-
-import Logo from '../components/Logo'
-
-import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
-import Page from '../components/Page'
-import Container from '../components/Container'
-import IndexLayout from '../layouts'
-
-import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
-
-const Footer = styled.footer`
-  height: 3rem
-`
-
-const Main = styled.main`
-  flex-grow: 1
-`
-
-const Header = styled.header`
-  height: 3rem
-`
-
-
-
-const showModal = (pageToShow: string) => {
-  // set it for pageToShow
-  // show the modal
-}
-
-const togglePage = (newPage: string) => {
-  // turn off all divs
-  // show newPage
-}
+import YellowVelvetLayout from '../layouts/yellow_velvet'
 
 
 
 const IndexPage = () => {
-
-  const [show, setShow] = useState(false)
-  // const [msg, setMsg] = useState("")
-  // useEffect(()=> {
-  //   console.log('useEffect')
-  //   fetch("/.netlify/functions/hello")
-  //     .then(response => response.json())
-  //     .then(({msg}) => setMsg(msg))
-  // }, []);
-  const [activeModal, setActiveModal] = useState(false)
-
-
-
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
-  const handleUpvote = () => {
-    // trigger 
-    // toggle between upvote and downvote
-  }
-
   return (
-    <IndexLayout>
-      <Page>
-        <Container>
-          <Header>
-            <div style={{ width: "100%", position: "relative" }}>
-              <div style={{ width: "100%", position: "absolute", left: "0", top: "0", textAlign: "center" }}>
-                <Logo />
-              </div>
-              <div style={{ display: "inline-block", position: "absolute", right: "0", top: "0", textAlign: "center" }}>
-                <button>[settings]</button>
-                <button style={{ marginLeft: "20px" }}>[help]</button>
-              </div>
-            </div>
-          </Header>
-          <Main>
-            <h1>Hello World #{Math.round(Math.random() * 10)}</h1>
-          </Main>
-          <Footer>
-            <button>[menu]</button>
-          </Footer>
-
-          <Modal show={show} onHide={handleClose}>
-            <Modal.Header closeButton>
-              <Modal.Title>Modal heading</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>[help/about]</Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Close
-              </Button>
-              <Button variant="primary" onClick={handleClose}>
-                Save Changes
-              </Button>
-            </Modal.Footer>
-          </Modal>
-        </Container>
-      </Page>
-    </IndexLayout>
+    <YellowVelvetLayout>
+      <h1>Hello World #{Math.round(Math.random() * 10)}</h1>
+    </YellowVelvetLayout>
   )
 }
 
@@ -104,9 +16,14 @@ export default IndexPage
 
 /*
 
+<>
+      <Media at="sm">Hello mobile!</Media>
+      <Media greaterThan="sm">Hello desktop!</Media>
+    </>
+
 Todo
 
-Fri 10 Jul
+Sun 10 Jul
 
 + See what's what (10:37 AM)
 * Add an icon for settings and help
@@ -120,6 +37,10 @@ Fri 10 Jul
     - explore moment.js
     - render the time
 * Footer
+  - move to a responsive layout
+    + learn about artsy/fresnel
+    = start on the mobile version of the site
+      - create YellowVelvet theme
   - float the menu to the right
   - menu slides out
 * Make header/footer part of a layout
