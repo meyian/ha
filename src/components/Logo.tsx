@@ -11,6 +11,12 @@ const CenteredDiv = styled.div`
   align-items: center;
 `
 
+const CourierP = styled.p`
+  font-family: courier-std, monospace;
+  font-weight: 400;
+  font-style: normal;
+`
+
 export default function Logo(){
   const data = useStaticQuery(graphql`
     query {
@@ -42,9 +48,9 @@ export default function Logo(){
           fixed={data.file.childImageSharp.fixed}
           alt="Site logo"
         />
-        <p>
+        <CourierP>
           { moment().format(`MM/DD/YYYY HH${separator}mma`) } ACC
-        </p>
+        </CourierP>
       </CenteredDiv>
 
     </div>

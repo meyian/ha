@@ -8,7 +8,7 @@ import '../styles/normalize'
 import { colors } from '../styles/variables'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
-import { Media } from "../Media"
+import { Media, MediaContextProvider } from "../Media"
 import LayoutRoot from '../components/LayoutRoot'
 import LayoutMain from '../components/LayoutMain'
 import Page from '../components/Page'
@@ -57,6 +57,10 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
             { name: 'description', content: data.site.siteMetadata.description },
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
+          link={[
+            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" },
+            { rel: 'stylesheet', href: "https://fonts.googleapis.com/icon?family=Material+Icons" }
+          ]}
         />
         <LayoutMain>
           <Page>
@@ -77,8 +81,10 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
               </Main>
               {/* bookmark */}
               <a href="" style={{color: `${colors.writingVelvet}`}}>request a feature</a>
-              <Media at="sm"><FooterMobile /></Media>
-              <Media greaterThan="sm"><FooterDesktop/></Media>
+              <MediaContextProvider>
+                <Media at="sm"><FooterMobile /></Media>
+                <Media greaterThan="sm"><FooterDesktop/></Media>
+              </MediaContextProvider>
               <Modals />
             </Container>
           </Page>

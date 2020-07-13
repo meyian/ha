@@ -24,23 +24,33 @@ Sun 10 Jul
 * Add an icon for settings and help
 
 * Header
-  = logo
-    - Gatsby image tutorial
+  + logo
+    + Gatsby image tutorial
     + box w/ placeholders
     + get an icon (srcset for mobile, tablet, desktop)
-    - render the icon
-    - explore moment.js
-    - render the time
+    + render the icon
+    + explore moment.js
+    + render the time
+* Load up the font
+* Header
+  * icons
+  * settings modal
+  * help/about modal
 * Footer
-  - move to a responsive layout
+  + move to a responsive layout
     + learn about artsy/fresnel
     + start on the mobile version of the site
       + create YellowVelvet theme (6:33 AM)
       + mobile and desktop version of footer (7:30 AM)
       * slide out menu
-  - menu button with slideout
-  - float the menu to the left
-  - menu slides out
+  + menu button with slideout (9:16 AM)
+    + fix mini-freakout over fresnel
+  * mobile menu
+    - items
+    - links to blank pages
+  * desktop menu
+    - links, help topics in a YAML file
+    - render links to blank pages
 * Make header/footer part of a layout
 * Main
   - two links
