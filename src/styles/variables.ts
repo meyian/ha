@@ -2,9 +2,10 @@
 
 export const siteSpecific = {
   sizes: {
-    breadSlice: "3rem"
-  }
-  // font: Courier new
+    breadSlice: '3rem',
+    styledPagePaddingInRem: 1.5
+  },
+  siteFont: "'Courier New', Courier, monospace"
 }
 
 export const colors = {
