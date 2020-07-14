@@ -31,7 +31,9 @@ Sun 10 Jul
     + render the icon
     + explore moment.js
     + render the time
-* Load up the font
++ Load up the font
++ Consolidate button styles
++ Style footer buttons
 * Header
   * icons
   * settings modal
@@ -42,7 +44,7 @@ Sun 10 Jul
     + start on the mobile version of the site
       + create YellowVelvet theme (6:33 AM)
       + mobile and desktop version of footer (7:30 AM)
-      * slide out menu
+      + slide out menu
   + menu button with slideout (9:16 AM)
     + fix mini-freakout over fresnel
   * mobile menu
@@ -55,17 +57,19 @@ Sun 10 Jul
 * Main
   - two links
   - image
-
 * Design web view
+
+
 * Code Quality
   - use global variables to store footer and header height
+  - accessbility: tab turns off the outline: none
 
 
 
 
 Asides
 
-I'm going to pretend I'm some sort of computer athelete, who struggles to stay focused, but vanquishes all foes in the end! Particularly the ones within.
+Ha, withdrawal can kiss my ass. For five and a half solid days.
 
 
 Notes:

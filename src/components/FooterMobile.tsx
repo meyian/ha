@@ -16,7 +16,7 @@ import MailIcon from '@material-ui/icons/Mail';
 
 
 const Footer = styled.footer`
-  height: ${siteSpecific.sizes.breadSlice}
+  height: 2rem
 `
 
 export default function FooterMobile(){

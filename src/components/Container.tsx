@@ -1,12 +1,11 @@
 import * as React from 'react'
 import styled from '@emotion/styled'
 
-import { widths } from '../styles/variables'
-import { getEmSize } from '../styles/mixins'
+import { siteSpecific } from '../styles/variables'
 
 const StyledContainer = styled.div`
-  height: calc(100vh - 3rem);
-  width: calc(100vw - 3rem);
+  height: calc(100vh - ${siteSpecific.sizes.styledPagePaddingInRem * 2 + "rem"});
+  width: calc(100vw - ${siteSpecific.sizes.styledPagePaddingInRem * 2 + "rem"});
   display: flex;
   flex-direction: column;
 `

@@ -5,7 +5,7 @@ import { siteSpecific } from '../styles/variables'
 
 
 const Footer = styled.footer`
-  height: ${siteSpecific.sizes.breadSlice}
+  height: 2rem
 `
 
 export default function FooterDesktop(){

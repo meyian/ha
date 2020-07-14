@@ -5,7 +5,8 @@ import styled from '@emotion/styled'
 
 import 'modern-normalize'
 import '../styles/normalize'
-import { colors } from '../styles/variables'
+import { VelvetButton } from '../components/SharedStyledComponents'
+import '../styles/sitewide.yellow_velvet.css'
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css'
 
 import { Media, MediaContextProvider } from "../Media"
@@ -58,13 +59,12 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
             { name: 'keywords', content: data.site.siteMetadata.keywords }
           ]}
           link={[
-            { rel: 'stylesheet', href: "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" },
             { rel: 'stylesheet', href: "https://fonts.googleapis.com/icon?family=Material+Icons" }
           ]}
         />
         <LayoutMain>
           <Page>
-            <Container>
+            <Container className="no-focus-outline">
               <Header>
                 <div style={{ width: "100%", position: "relative" }}>
                   <div style={{ width: "100%", position: "absolute", left: "0", top: "0", textAlign: "center" }}>
@@ -79,8 +79,9 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
               <Main>
                 {children}
               </Main>
-              {/* bookmark */}
-              <a href="" style={{color: `${colors.writingVelvet}`}}>request a feature</a>
+              <section>
+                <VelvetButton>request a feature</VelvetButton>
+              </section>
               <MediaContextProvider>
                 <Media at="sm"><FooterMobile /></Media>
                 <Media greaterThan="sm"><FooterDesktop/></Media>
