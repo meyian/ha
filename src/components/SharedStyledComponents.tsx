@@ -12,6 +12,10 @@ export const PlainButton = styled.button`
   border: none;
   font-family: "Courier New";
   padding: 0;
+
+  &:active{
+    color: ${colors.writingVelvet};
+  }
 `
 
 export const VelvetButton = styled(PlainButton)`

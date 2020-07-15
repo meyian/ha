@@ -44,7 +44,7 @@ export default function Logo(){
           alt="Site logo"
         />
         <CourierP>
-          { moment().format(`MM/DD/YYYY HH${separator}mma`) } ACC
+          { moment().format(`MM/DD/YYYY hh${separator}mma`) } ACC
         </CourierP>
       </CenteredDiv>
 

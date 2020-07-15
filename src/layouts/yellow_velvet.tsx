@@ -15,16 +15,12 @@ import LayoutMain from '../components/LayoutMain'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import Modals from '../components/Modals'
-import Logo from '../components/Logo'
+import SiteHeader from '../components/SiteHeader'
 import FooterDesktop from '../components/FooterDesktop'
 import FooterMobile from '../components/FooterMobile'
 
 const Main = styled.main`
   flex-grow: 1
-`
-
-const Header = styled.header`
-  height: 3rem
 `
 
 
@@ -65,17 +61,7 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
         <LayoutMain>
           <Page>
             <Container className="no-focus-outline">
-              <Header>
-                <div style={{ width: "100%", position: "relative" }}>
-                  <div style={{ width: "100%", position: "absolute", left: "0", top: "0", textAlign: "center" }}>
-                    <Logo />
-                  </div>
-                  <div style={{ display: "inline-block", position: "absolute", right: "0", top: "0", textAlign: "center" }}>
-                    <button>[settings]</button>
-                    <button style={{ marginLeft: "20px" }}>[help]</button>
-                  </div>
-                </div>
-              </Header>
+              <SiteHeader/>
               <Main>
                 {children}
               </Main>

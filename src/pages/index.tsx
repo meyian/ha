@@ -35,9 +35,25 @@ Sun 10 Jul
 + Consolidate button styles
 + Style footer buttons
 * Header
-  * icons
+  + icons (done, 9:56 AM)
+  + research mousemove menu show
+    - the logic (https://stackoverflow.com/questions/23434004/navbar-that-appears-when-mouse-moves-and-disappears-when-still)
+    - redux subscription (https://stackoverflow.com/questions/36163442/what-listener-does-in-the-redux-store)
+  = redux to the yellowvelvet theme(page container -> container)
+	- subscribe to changes, print something on mousemove
+		- move mouse and click dispatches
+		- does it fire everytime i use the mouse, or not
+		- throttle the mousemove (lego-blocks)
+	- addclass/property + log (header)
+	- add timeout for property removal
+		- animations w/ react
+		- implement a fade out
+	- same logic for footer
   * settings modal
   * help/about modal
+  * hide icons when mouse not in motion
+    - research 
+
 * Footer
   + move to a responsive layout
     + learn about artsy/fresnel
@@ -62,7 +78,9 @@ Sun 10 Jul
 
 * Code Quality
   - use global variables to store footer and header height
-  - accessbility: tab turns off the outline: none
+  - accessbility: tab turns off the outline: none (https://jmperezperez.com/outline-focus-ring-a11y/)
+  - use a class to customize Mui (https://material-ui.com/customization/components/)
+
 
 
 
@@ -70,6 +88,8 @@ Sun 10 Jul
 Asides
 
 Ha, withdrawal can kiss my ass. For five and a half solid days.
+
+Started at 9 am, trying to get through my day. Replacing the buttons w/ Icons
 
 
 Notes:
