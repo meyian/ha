@@ -39,16 +39,25 @@ Sun 10 Jul
   + research mousemove menu show
     - the logic (https://stackoverflow.com/questions/23434004/navbar-that-appears-when-mouse-moves-and-disappears-when-still)
     - redux subscription (https://stackoverflow.com/questions/36163442/what-listener-does-in-the-redux-store)
-  = redux to the yellowvelvet theme(page container -> container)
-	- subscribe to changes, print something on mousemove
-		- move mouse and click dispatches
-		- does it fire everytime i use the mouse, or not
-		- throttle the mousemove (lego-blocks)
-	- addclass/property + log (header)
-	- add timeout for property removal
-		- animations w/ react
-		- implement a fade out
-	- same logic for footer
+  Redux
+    + redux to the yellowvelvet theme(page container -> container)
+    * containerize
+      - create a container? for the header
+      - move action to the container
+    - click to toggle the header, click to hide
+    - click to extend the setTimeout
+    - click to cancel the setTimeout
+    desktop version
+    - subscribe to changes, print something on mousemove
+      - counter counts the number of times your mouse moved
+      - move mouse and click dispatches
+      - does it fire everytime i use the mouse, or not
+      - throttle the mousemove (lego-blocks)
+    - addclass/property + log (header)
+    - add timeout for property removal
+      - animations w/ react
+      - implement a fade out
+    - same logic for footer
   * settings modal
   * help/about modal
   * hide icons when mouse not in motion
