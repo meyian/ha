@@ -1,14 +1,7 @@
 import { createStore as reduxCreateStore } from "redux"
+import { INCREMENT } from './actions'
+import { IncrementAction, CounterState } from './types'
 
-const INCREMENT = 'INCREMENT'
-
-interface IncrementAction {
-  type: typeof INCREMENT
-}
-
-interface CounterState{
-  count: number
-}
 
 const initialState: CounterState = { count: 0 }
 

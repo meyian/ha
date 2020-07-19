@@ -15,31 +15,14 @@ import LayoutMain from '../components/LayoutMain'
 import Page from '../components/Page'
 import Container from '../components/Container'
 import Modals from '../components/Modals'
-import SiteHeader from '../components/SiteHeader'
+import MobileSiteHeaderContainer from '../containers/MobileSiteHeaderContainer'
 import FooterDesktop from '../components/FooterDesktop'
 import FooterMobile from '../components/FooterMobile'
-
-import { connect } from "react-redux"
 
 const Main = styled.main`
   flex-grow: 1
 `
-const Counter = ({ count, increment }) => (
-  <div>
-    <p>Count: {count}</p>
-    <button onClick={increment}>Increment</button>
-  </div>
-)
 
-const mapStateToProps = ({ count }) => {
-  return { count }
-}
-
-const mapDispatchToProps = dispatch => {
-  return { increment: () => dispatch({ type: `INCREMENT` }) }
-}
-
-const ConnectedCounter = connect(mapStateToProps, mapDispatchToProps)(Counter)
 
 interface StaticQueryProps {
   site: {
@@ -78,9 +61,8 @@ const YellowVelvetLayout: React.FC = ({ children }) => (
         <LayoutMain>
           <Page>
             <Container className="no-focus-outline">
-              <SiteHeader/>
+              <MobileSiteHeaderContainer />
               <Main>
-                <ConnectedCounter />
                 {children}
               </Main>
               <section>

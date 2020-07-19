@@ -18,9 +18,9 @@ export default IndexPage
 
 Todo
 
-Sun 10 Jul
+Sun 19 Jul
 
-+ See what's what (10:37 AM)
++ See what's what (4:12 PM)
 * Add an icon for settings and help
 
 * Header
@@ -41,10 +41,11 @@ Sun 10 Jul
     - redux subscription (https://stackoverflow.com/questions/36163442/what-listener-does-in-the-redux-store)
   Redux
     + redux to the yellowvelvet theme(page container -> container)
-    * containerize
-      - create a container? for the header
-      - move action to the container
+    + containerize (10:37 AM)
+      + create a container? for the header
+      + move action to the container
     - click to toggle the header, click to hide
+      - create new actions, reducers, types
     - click to extend the setTimeout
     - click to cancel the setTimeout
     desktop version

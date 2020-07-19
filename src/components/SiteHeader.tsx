@@ -24,7 +24,9 @@ export default function SiteHeader(){
         </div>
         <div style={{ display: "inline-block", position: "absolute", right: "0", top: "0", textAlign: "center" }}>
           <PlainButton><SettingsIcon /></PlainButton>
-          <PlainButton><HelpSpan>?</HelpSpan></PlainButton>
+          <PlainButton>
+            <HelpSpan>?</HelpSpan>
+          </PlainButton>
         </div>
       </div>
     </Header>
