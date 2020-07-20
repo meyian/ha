@@ -4,6 +4,13 @@ import { PlainButton } from '../components/SharedStyledComponents'
 import SettingsIcon from '@material-ui/icons/Settings'
 import Logo from '../components/Logo'
 
+import { connector, ConnectedProps } from 'react-redux'
+
+type PropsFromRedux = ConnectedProps<typeof connector>
+
+// type Props = PropsFromRedux & {
+//   backgroundColor: string
+// }
 
 const Header = styled.header`
   height: 3rem
@@ -15,9 +22,16 @@ const HelpSpan = styled.span`
   font-size: 1.2rem;
 `
 
-export default function SiteHeader(){
+interface SiteHeaderProps {
+  menuVisible: boolean,
+  onTap: () => void
+}
+
+// : React.FC<SiteHeaderProps>
+
+const SiteHeader: React.FC<SiteHeaderProps> = ({ onTap }) => {
   return (
-    <Header>
+    <Header onClick={ onTap }>
       <div style={{ width: "100%", position: "relative" }}>
         <div style={{ width: "100%", position: "absolute", left: "0", top: "0", textAlign: "center" }}>
           <Logo />
@@ -32,3 +46,5 @@ export default function SiteHeader(){
     </Header>
   )
 }
+
+export default SiteHeader

@@ -17,11 +17,17 @@ const mapDispatchToProps = (dispatch: any) => {
 
 const ConnectedSiteHeader = connect(mapStateToProps, mapDispatchToProps)(SiteHeader)
 
-export default () => {
+interface MobileSiteContainerProps{
+  children?: React.ReactNode
+}
+
+export default ({ children }: MobileSiteContainerProps) => {
   
   return(
     <>
-      <ConnectedSiteHeader />
+      <ConnectedSiteHeader>
+        { children }
+      </ConnectedSiteHeader>
     </>
   )
 }

@@ -45,9 +45,13 @@ Sun 19 Jul
       + create a container? for the header
       + move action to the container
     - click to toggle the header, click to hide
-      - create new actions, reducers, types
-    - click to extend the setTimeout
-    - click to cancel the setTimeout
+      + create new actions, reducers, types
+      = make the whole thing clickable
+        - move the container to the whole screen
+      - clicks turn menu on and off 
+      - click when the menu is on, turn off the counter
+      - when the menu is missing, and then you click, it turns on the counter and shows the screen
+      - when the counter goes off, turn off the screen
     desktop version
     - subscribe to changes, print something on mousemove
       - counter counts the number of times your mouse moved

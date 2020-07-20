@@ -1,21 +1,21 @@
 import { createStore as reduxCreateStore } from "redux"
-import { INCREMENT } from './actions'
-import { IncrementAction, CounterState } from './types'
+import { TAPPED_SCREEN } from './actions'
+import { TappedAction, SiteState } from './types'
 
 
-const initialState: CounterState = { count: 0 }
+const initialState: SiteState = { 
+  menuVisible: false
+}
 
-function reducer(
+function tappingReducer(
   state = initialState, 
-  action: IncrementAction
-): CounterState {
-  if (action.type === INCREMENT) {
-    return Object.assign({}, state, {
-      count: state.count + 1,
-    })
+  action: TappedAction
+): SiteState {
+  if (action.type === TAPPED_SCREEN) {
+    return {...state, menuVisible: !!state.menuVisible}
   }
   return state
 }
 
-const createStore = () => reduxCreateStore(reducer, initialState)
+const createStore = () => reduxCreateStore(tappingReducer, initialState)
 export default createStore
