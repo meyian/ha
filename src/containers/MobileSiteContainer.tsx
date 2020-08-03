@@ -1,33 +1,37 @@
-import { connect } from 'react-redux'
-import { SiteState } from '../state/types'
-import { TAPPED_SCREEN } from '../state/actions'
 import React from 'react'
-import SiteHeader from '../components/SiteHeader'
+import { connect } from 'react-redux'
 
-const mapStateToProps = ({ menuVisible }: SiteState) => {
-  return { menuVisible }
+import { ChildrenWrapperProps } from '../state/types'
+import { TAPPED_SCREEN } from '../state/actions'
+
+import MobileSite from '../components/MobileSite'
+
+import { SiteState } from '../state/createStore'
+
+const mapStateToProps = ({ menuVisible, numTaps }: SiteState) => {
+  return { menuVisible, numTaps }
 }
 
 const mapDispatchToProps = (dispatch: any) => {
-  return { onTap: () => {
-    console.log("mapDispatchToProps > onTap")
-    dispatch({ type: TAPPED_SCREEN })
-  }}
+  return { 
+    onTap: (event: React.MouseEvent<HTMLElement>) => {
+      const target = event.currentTarget as HTMLElement
+
+      if (target.className.indexOf('mobile-site') !== -1){
+        dispatch({ type: TAPPED_SCREEN })
+      }
+    }
+  }
 }
 
-const ConnectedSiteHeader = connect(mapStateToProps, mapDispatchToProps)(SiteHeader)
+const ConnectedMobileSite = connect(mapStateToProps, mapDispatchToProps)(MobileSite)
 
-interface MobileSiteContainerProps{
-  children?: React.ReactNode
-}
-
-export default ({ children }: MobileSiteContainerProps) => {
-  
+export default ({ children }: ChildrenWrapperProps) => {
   return(
     <>
-      <ConnectedSiteHeader>
+      <ConnectedMobileSite>
         { children }
-      </ConnectedSiteHeader>
+      </ConnectedMobileSite>
     </>
   )
 }
@@ -35,5 +39,6 @@ export default ({ children }: MobileSiteContainerProps) => {
 /*
 
 NB: Have no idea how @types/react-redux works, but it solved my problem
+
 
 */

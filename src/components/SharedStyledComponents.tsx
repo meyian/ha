@@ -1,8 +1,8 @@
 import styled from '@emotion/styled'
-import { siteSpecific, colors } from '../styles/variables'
+import { fonts, colors } from '../styles/variables'
 
 export const CourierP = styled.p`
-  font-family: ${ siteSpecific.siteFont };
+  font-family: ${ fonts.siteFont };
   font-weight: 400;
   font-style: normal;
 `

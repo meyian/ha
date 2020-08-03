@@ -4,8 +4,7 @@ export const siteSpecific = {
   sizes: {
     breadSlice: '3rem',
     styledPagePaddingInRem: 1.5
-  },
-  siteFont: "'Courier New', Courier, monospace"
+  }
 }
 
 export const colors = {
@@ -32,6 +31,7 @@ export const colors = {
 }
 
 export const fonts = {
+  siteFont: "'Courier New', Courier, monospace",
   sansSerif:
     '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif',
   serif: 'Georgia, "Times New Roman", Times, serif',

@@ -1,16 +1,11 @@
 import styled from '@emotion/styled'
 
-import { PlainButton } from '../components/SharedStyledComponents'
+import React, { useState } from 'react'
+import { PlainButton } from './SharedStyledComponents'
 import SettingsIcon from '@material-ui/icons/Settings'
+import SettingsModal from './SettingsModal';
+import AboutModal from './AboutModal';
 import Logo from '../components/Logo'
-
-import { connector, ConnectedProps } from 'react-redux'
-
-type PropsFromRedux = ConnectedProps<typeof connector>
-
-// type Props = PropsFromRedux & {
-//   backgroundColor: string
-// }
 
 const Header = styled.header`
   height: 3rem
@@ -23,28 +18,62 @@ const HelpSpan = styled.span`
 `
 
 interface SiteHeaderProps {
-  menuVisible: boolean,
-  onTap: () => void
+  menuVisible: boolean
 }
 
-// : React.FC<SiteHeaderProps>
+const SiteHeader: React.FC<SiteHeaderProps> = ({ menuVisible }) => {
 
-const SiteHeader: React.FC<SiteHeaderProps> = ({ onTap }) => {
+  const [modalState, setModalState] = useState(
+    {
+      settingsModal: false,
+      aboutModal: false
+    }
+  )
+
+  const handleSettingsClick = (event: React.MouseEvent<HTMLElement>) => {
+    console.log("[open settings modal]")
+    setModalState({...modalState, settingsModal: true})
+    event.stopPropagation()
+  }
+
+  const handleAboutClick = (event: React.MouseEvent<HTMLElement>) => {
+    console.log("[open about modal]")
+    setModalState({...modalState, aboutModal: true})
+    event.stopPropagation()
+  }
+
+  const handleCloseModals = (event: React.MouseEvent<HTMLElement>) => {
+    setModalState({...modalState, settingsModal: false, aboutModal: false})
+    event.stopPropagation()
+  }
+
+
   return (
-    <Header onClick={ onTap }>
+    <Header>
       <div style={{ width: "100%", position: "relative" }}>
         <div style={{ width: "100%", position: "absolute", left: "0", top: "0", textAlign: "center" }}>
           <Logo />
         </div>
-        <div style={{ display: "inline-block", position: "absolute", right: "0", top: "0", textAlign: "center" }}>
-          <PlainButton><SettingsIcon /></PlainButton>
-          <PlainButton>
+        {menuVisible && <nav style={{ display: "inline-block", position: "absolute", right: "0", top: "0", textAlign: "center" }}>
+          <PlainButton onClick={handleSettingsClick} ><SettingsIcon /></PlainButton>
+          <PlainButton onClick={handleAboutClick} >
             <HelpSpan>?</HelpSpan>
           </PlainButton>
-        </div>
+        </nav>}
       </div>
+      <SettingsModal isOpen={modalState.settingsModal} onClose={handleCloseModals} />
+      <AboutModal isOpen={modalState.aboutModal} onClose={handleCloseModals} />
     </Header>
   )
 }
 
 export default SiteHeader
+
+/*
+
+Todo:
+
+* Unify modals
+
+
+*/

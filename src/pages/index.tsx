@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import styled from '@emotion/styled'
 import YellowVelvetLayout from '../layouts/yellow_velvet'
 
 
@@ -44,13 +43,19 @@ Sun 19 Jul
     + containerize (10:37 AM)
       + create a container? for the header
       + move action to the container
-    - click to toggle the header, click to hide
+    * make 
+    = click to toggle the header, click to hide
       + create new actions, reducers, types
-      = make the whole thing clickable
-        - move the container to the whole screen
+      + make the whole thing clickable
+        + move the container to the whole screen (mon 20 jul)
+        + test mobile version of the site
+        + make the labels unresponsive to clicking
+      + click to show settings modal, click to hide it (fri 24 jul)
+      + do the same for help modal (fri 24 jul, 11:21)
       - clicks turn menu on and off 
-      - click when the menu is on, turn off the counter
+      - click when the menu is on and you click, turn off the counter and the menu
       - when the menu is missing, and then you click, it turns on the counter and shows the screen
+        - https://stackoverflow.com/questions/23434004/navbar-that-appears-when-mouse-moves-and-disappears-when-still
       - when the counter goes off, turn off the screen
     desktop version
     - subscribe to changes, print something on mousemove
