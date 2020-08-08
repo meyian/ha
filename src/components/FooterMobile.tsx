@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import styled from '@emotion/styled'
+import { css } from '@emotion/core'
 
 import { siteSpecific } from '../styles/variables'
 
@@ -19,12 +20,17 @@ const Footer = styled.footer`
   height: 2rem
 `
 
-export default function FooterMobile(){
+interface FooterMobileProps {
+  menuVisible: boolea
+}
+
+export default function FooterMobile({ menuVisible }: FooterMobileProps) {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   return (
     <Footer>
-      <Button onClick={() => setIsDrawerOpen(true)}>Menu</Button>
+      <Button css={css`visibility: ${menuVisible ? 'visible' :
+        'hidden'}`} onClick={() => setIsDrawerOpen(true)}>Menu</Button>
       <Drawer anchor="left" open={isDrawerOpen} onClose={() => setIsDrawerOpen(false)}>
         <h2>[drawer]</h2>
       </Drawer>

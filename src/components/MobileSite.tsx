@@ -17,13 +17,12 @@ export default ({ children, menuVisible, onTap, numTaps }: MobileSiteProps) => {
     <Container className="no-focus-outline mobile-site" onClick={onTap}>
       <SiteHeader menuVisible={menuVisible} />
       <Main>
-        <p>Number of taps: {numTaps}</p>
         {children}
       </Main>
       <section>
-        <VelvetButton>request a feature</VelvetButton>
+        <VelvetButton>suggest</VelvetButton>
       </section>
-      <FooterMobile />
+      <FooterMobile menuVisible={menuVisible} />
       <Modals />
     </Container>
   )

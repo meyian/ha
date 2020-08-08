@@ -8,7 +8,7 @@ import AboutModal from './AboutModal';
 import Logo from '../components/Logo'
 
 const Header = styled.header`
-  height: 3rem
+  height: 5rem
 `
 
 const HelpSpan = styled.span`

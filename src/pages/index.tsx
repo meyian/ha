@@ -52,11 +52,23 @@ Sun 19 Jul
         + make the labels unresponsive to clicking
       + click to show settings modal, click to hide it (fri 24 jul)
       + do the same for help modal (fri 24 jul, 11:21)
-      - clicks turn menu on and off 
-      - click when the menu is on and you click, turn off the counter and the menu
-      - when the menu is missing, and then you click, it turns on the counter and shows the screen
-        - https://stackoverflow.com/questions/23434004/navbar-that-appears-when-mouse-moves-and-disappears-when-still
-      - when the counter goes off, turn off the screen
+      + click when the menu is on and you click, turn off the counter and the menu
+      + when the menu is missing, and then you click, it turns on the counter and shows the screen
+        + https://stackoverflow.com/questions/23434004/navbar-that-appears-when-mouse-moves-and-disappears-when-still
+      + when the counter goes off, turn off the screen
+
+    Footer
+      + connecting footer to the container	(fri 7 aug 11:04)
+      + remove # of taps
+      + fix header height (fri 7 aug 11:07)
+      * suggest modal
+      * mobile drawer menu
+        links
+        - index
+        - article 1
+        - article 2
+
+
     desktop version
     - subscribe to changes, print something on mousemove
       - counter counts the number of times your mouse moved
